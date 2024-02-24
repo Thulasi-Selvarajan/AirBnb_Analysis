@@ -71,6 +71,7 @@ if selected == "Overview":
     col1,col2 = st.columns(2,gap='medium')
 
     with col1:
+        # TOP10 PROPERTY TYPE BAR CHART
         df1 = df.query(query).groupby(["Property_type"]).size().reset_index(name="Listings").sort_values(by='Listings',ascending=False)[:10]
     fig = px.bar(df1,
                         title='Top 10 Property Types',
